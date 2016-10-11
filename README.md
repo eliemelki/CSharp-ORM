@@ -1,9 +1,6 @@
 # ORM
 
-ORM library is an Object Relation Model library that maps objects to database tables. It uses expression to build queries.
-
-<b>Last change was since 2013.</b>
-
+ORM is an Object Relation Model library that maps objects to database tables. It uses expression to build queries.
 
 ## Table of Contents
 
