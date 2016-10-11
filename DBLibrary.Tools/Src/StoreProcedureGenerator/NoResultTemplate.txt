@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using DBLibrary.Mapper;
+using DBLibrary.Session;
+using DBLibrary.Mapper.ResultBinder;
+using System.Data.SqlClient;
+using Loader;
+using DBLibrary.Repository;
+using DBLibrary.QueryEngine.Query.Queries;
+using DBLibrary.Configuration;
+
+namespace [NAMESPACE]
+{
+	public class [STORED_PROCEDUDRE]
+	{
+		public static void ExecuteStoreProcedure([STORED_PROCEDUDRE_PARAMATERS_ARGUMENTS])
+		{
+			var dic = new Dictionary<String,Object>();
+[STORED_PROCEDUDRE_PARAMATERS]
+
+			var query = NativeStoredProcedureQuery.GetSQLQuery("[STORED_PROCEDUDRE]", dic );
+			var _binder =  new DataReaderBinder();
+			_binder.OnBind = delegate(SqlDataReader aReader)
+                {
+                   
+                };
+			var   Factory =  BaseFactory.Instance.GetInstance<SqlFactory>();
+			 var helper = Factory.GetDBHelper();
+            helper.Execute(delegate(DbSession aDBSession)
+                       {
+                           aDBSession.Execute(query,_binder);
+                       });
+		}
+	}
+}

@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using DBLibrary.Mapper;
+using DBLibrary.Session;
+using DBLibrary.Mapper.ResultBinder;
+using System.Data.SqlClient;
+using Loader;
+using DBLibrary.Repository;
+using DBLibrary.QueryEngine.Query.Queries;
+using DBLibrary.Configuration;
+
+namespace [NAMESPACE]
+{
+    public class [CLASS]
+    {
+		[CLASS_BODY]
+    }
+
+	public class [CLASS]ClassMap : ClassMap<[CLASS]>
+    {
+        public [CLASS]ClassMap()
+        {
+            Map(this);
+        }
+
+        public static void Map<T>(ClassMap<T> aClassMap) where T : [CLASS], new()
+        {
+            [CLASSMAP_BODY]
+        }
+    }
+
+	public class [STORED_PROCEDUDRE]
+	{
+		public static IEnumerable<[CLASS]> ExecuteStoreProcedure([STORED_PROCEDUDRE_PARAMATERS_ARGUMENTS])
+		{
+			var dic = new Dictionary<String,Object>();
+[STORED_PROCEDUDRE_PARAMATERS]
+			var query = NativeStoredProcedureQuery.GetSQLQuery("[STORED_PROCEDUDRE]", dic );
+			TemplateBinder<[CLASS]> _binder = new TemplateBinder<[CLASS]>();
+            List<[CLASS]> _r = new List<[CLASS]>();
+            _binder.OnBind = delegate([CLASS] aT)
+                {
+                    _r.Add(aT);
+                };
+			var   Factory = BaseFactory.Instance.GetInstance<SqlFactory>();
+			 var helper = Factory.GetDBHelper();
+            helper.Execute(delegate(DbSession aDBSession)
+                       {
+                           aDBSession.Execute(query, _binder);
+                       });
+            return _r;
+		}
+	}
+}

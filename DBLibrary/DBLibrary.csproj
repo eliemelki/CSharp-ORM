@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B8CFF65-46D1-4907-BDB1-2DD69D97DCA3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DBLibrary</RootNamespace>
+    <AssemblyName>DBLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Categories\StringUtils.cs" />
+    <Compile Include="Configuration\Config.cs" />
+    <Compile Include="Configuration\EntryPoint.cs" />
+    <Compile Include="Configuration\SqlFactory.cs" />
+    <Compile Include="Configuration\Initialise.cs" />
+    <Compile Include="Configuration\SqlModules.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="DatabaseLogger.cs" />
+    <Compile Include="Loader\ApplicationLoader.cs" />
+    <Compile Include="Loader\Config\ConfigurationInfo.cs" />
+    <Compile Include="Loader\Config\FileConfigLoader.cs" />
+    <Compile Include="Loader\Config\HasConfiguration.cs" />
+    <Compile Include="Loader\InjectFactory.cs" />
+    <Compile Include="Loader\InjectModule.cs" />
+    <Compile Include="Loader\Injector.cs" />
+    <Compile Include="Mapper\PropertyBinder.cs" />
+    <Compile Include="Mapper\ClassMap.cs" />
+    <Compile Include="Mapper\ClassMapLoader.cs" />
+    <Compile Include="Mapper\PropertyMap.cs" />
+    <Compile Include="Mapper\ResultBinder\ObjectBinder.cs" />
+    <Compile Include="Mapper\ResultBinder\RowBinder.cs" />
+    <Compile Include="Mapper\ResultBinder\ResultBinder.cs" />
+    <Compile Include="Mapper\ResultBinder\TemplateBinder.cs" />
+    <Compile Include="Mapper\ResultBinder\TemplateInsertBinder.cs" />
+    <Compile Include="Mapper\SqlDependencyEngine.cs" />
+    <Compile Include="Mapper\ValueExtractor.cs" />
+    <Compile Include="QueryEngine\Criteria\ModelCriteria.cs" />
+    <Compile Include="QueryEngine\Criteria\PagerBuilder.cs" />
+    <Compile Include="QueryEngine\Expressions\ExpressionBoolean.cs" />
+    <Compile Include="QueryEngine\Expressions\ExpressionHelperGeneric.cs" />
+    <Compile Include="QueryEngine\Expressions\Group.cs" />
+    <Compile Include="QueryEngine\Expressions\Operators.cs" />
+    <Compile Include="QueryEngine\Expressions\ParemetersHelper.cs" />
+    <Compile Include="QueryEngine\Query\CachePreferences.cs" />
+    <Compile Include="QueryEngine\Query\GenericSqlQuery\AbstractQuery.cs" />
+    <Compile Include="QueryEngine\Query\GenericSqlQuery\IUDQuery.cs" />
+    <Compile Include="QueryEngine\Query\GenericSqlQuery\SelectQuery.cs" />
+    <Compile Include="QueryEngine\Query\HasOptions.cs" />
+    <Compile Include="QueryEngine\Query\Queries\AbstractQuery.cs" />
+    <Compile Include="QueryEngine\Query\Queries\IUDQuery.cs" />
+    <Compile Include="QueryEngine\Query\Queries\NativeStoredProcedureQuery.cs" />
+    <Compile Include="QueryEngine\Query\Queries\SelectQuery.cs" />
+    <Compile Include="QueryEngine\Query\GenericSqlQuery\ValueBinder.cs" />
+    <Compile Include="QueryEngine\Criteria\SqlCriteria.cs" />
+    <Compile Include="QueryEngine\Query\Queries\NativeQuery.cs" />
+    <Compile Include="QueryEngine\Expressions\Expression.cs" />
+    <Compile Include="QueryEngine\Expressions\ExpressionBetween.cs" />
+    <Compile Include="QueryEngine\Expressions\ExpressionHelper.cs" />
+    <Compile Include="QueryEngine\Expressions\ExpressionIn.cs" />
+    <Compile Include="QueryEngine\Expressions\ExpressionSimple.cs" />
+    <Compile Include="QueryEngine\Expressions\ExpressionSql.cs" />
+    <Compile Include="QueryEngine\Query\QueryFactory.cs" />
+    <Compile Include="QueryEngine\Query\SqlQuery.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryEngine\Expressions\ExpressionLogical.cs" />
+    <Compile Include="QueryEngine\Expressions\Order.cs" />
+    <Compile Include="QueryEngine\Expressions\ExpressionParameter.cs" />
+    <Compile Include="QueryEngine\SqlStatements\AbstractStatement.cs" />
+    <Compile Include="QueryEngine\SqlStatements\InsertStatement.cs" />
+    <Compile Include="QueryEngine\SqlStatements\DeleteStatement.cs" />
+    <Compile Include="QueryEngine\SqlStatements\SelectStatement.cs" />
+    <Compile Include="QueryEngine\SqlStatements\StatementFields.cs" />
+    <Compile Include="QueryEngine\SqlStatements\ParemeterStatement.cs" />
+    <Compile Include="QueryEngine\SqlStatements\UpdateStatement.cs" />
+    <Compile Include="Repository\AbstractRepository.cs" />
+    <Compile Include="Repository\Command\DBCommand.cs" />
+    <Compile Include="Repository\Command\DBCommandResult.cs" />
+    <Compile Include="Repository\Command\DBCompositeFilter.cs" />
+    <Compile Include="Repository\Command\DBFilter.cs" />
+    <Compile Include="Repository\Command\DBPager.cs" />
+    <Compile Include="Repository\Command\DBSort.cs" />
+    <Compile Include="Repository\DBHelper.cs" />
+    <Compile Include="Repository\DBRepository.cs" />
+    <Compile Include="Repository\DefaultRepository.cs" />
+    <Compile Include="Repository\DBPager.cs" />
+    <Compile Include="Repository\GenericTableRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\RepositoryUtil.cs" />
+    <Compile Include="Repository\SchemaRepository.cs" />
+    <Compile Include="Repository\StoredProcedureRepository.cs" />
+    <Compile Include="Repository\TableRepository.cs" />
+    <Compile Include="Repository\ViewRepository.cs" />
+    <Compile Include="ResultIterator.cs" />
+    <Compile Include="Session\Cache\AbstractCacheExecutor.cs" />
+    <Compile Include="Session\Cache\AspNetCache.cs" />
+    <Compile Include="Session\Cache\Cache.cs" />
+    <Compile Include="Mapper\ResultBinder\CacheBinder.cs" />
+    <Compile Include="Session\Cache\CacheSpec.cs" />
+    <Compile Include="Session\Cache\CacheExecutor.cs" />
+    <Compile Include="Session\Cache\CacheKeyGenerator.cs" />
+    <Compile Include="Session\Cache\DepenedencyExecutor.cs" />
+    <Compile Include="Session\Connection.cs" />
+    <Compile Include="Session\Cache\AspNetNotification.cs" />
+    <Compile Include="Session\Executor\ExecutorFactory.cs" />
+    <Compile Include="Session\Executor\Executor.cs" />
+    <Compile Include="Session\Executor\DefaultExecutor.cs" />
+    <Compile Include="Session\Executor\QueryInfo.cs" />
+    <Compile Include="Session\Mock\MockConnection.cs" />
+    <Compile Include="Session\Mock\MockModules.cs" />
+    <Compile Include="Session\Mock\MockTransaction.cs" />
+    <Compile Include="Session\QueryTracker.cs" />
+    <Compile Include="Session\Session.cs" />
+    <Compile Include="Session\SessionImpl.cs" />
+    <Compile Include="Session\Transaction.cs" />
+    <Compile Include="Utils\FileRetriever.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

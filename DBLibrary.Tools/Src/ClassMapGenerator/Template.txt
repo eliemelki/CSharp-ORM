@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using DBLibrary.Mapper;
+
+
+namespace [NAMESPACE]
+{
+    public class [CLASS]
+    {
+		[CLASS_BODY]
+    }
+
+	public class [CLASS]ClassMap : ClassMap<[CLASS]>
+    {
+        public [CLASS]ClassMap()
+        {
+            Map(this);
+        }
+
+        public static void Map<T>(ClassMap<T> aClassMap) where T : [CLASS], new()
+        {
+            [CLASSMAP_BODY]
+        }
+    }
+}

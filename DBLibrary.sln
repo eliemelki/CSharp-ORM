@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLibrary", "DBLibrary\DBLibrary.csproj", "{2B8CFF65-46D1-4907-BDB1-2DD69D97DCA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLibrary.Tools", "DBLibrary.Tools\DBLibrary.Tools.csproj", "{4B318379-4EA3-462C-9864-139C716856F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8A020CC2-BB80-45B3-9F6F-65135D451564}"
+	ProjectSection(SolutionItems) = preProject
+		DBLibrary.vsmdi = DBLibrary.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLibrary.Tools.Test", "DBLibrary.Tools.Test\DBLibrary.Tools.Test.csproj", "{4DDEDF5E-F37C-4E10-BDFB-91B83466908A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLibrary.Test", "DBLibrary.Test\DBLibrary.Test.csproj", "{819826F5-799F-40CC-A552-AEBD975EB271}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B8CFF65-46D1-4907-BDB1-2DD69D97DCA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B8CFF65-46D1-4907-BDB1-2DD69D97DCA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B8CFF65-46D1-4907-BDB1-2DD69D97DCA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B8CFF65-46D1-4907-BDB1-2DD69D97DCA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B318379-4EA3-462C-9864-139C716856F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B318379-4EA3-462C-9864-139C716856F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B318379-4EA3-462C-9864-139C716856F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B318379-4EA3-462C-9864-139C716856F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DDEDF5E-F37C-4E10-BDFB-91B83466908A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DDEDF5E-F37C-4E10-BDFB-91B83466908A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DDEDF5E-F37C-4E10-BDFB-91B83466908A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DDEDF5E-F37C-4E10-BDFB-91B83466908A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{819826F5-799F-40CC-A552-AEBD975EB271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{819826F5-799F-40CC-A552-AEBD975EB271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{819826F5-799F-40CC-A552-AEBD975EB271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{819826F5-799F-40CC-A552-AEBD975EB271}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = DBLibrary.vsmdi
+	EndGlobalSection
+EndGlobal
